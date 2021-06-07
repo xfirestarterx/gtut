@@ -1,6 +1,6 @@
 extends Panel
 
-func g(node: String):
+func g(node: String) -> Node:
 	return get_node(node)
 
 func _ready() -> void:

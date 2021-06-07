@@ -8,10 +8,20 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "Timer_ex",
+"language": "GDScript",
+"path": "res://scripts/timer_ex.gd"
+} ]
+_global_script_class_icons={
+"Timer_ex": "res://icon.png"
+}
+
 [application]
 
 config/name="tutor"
-run/main_scene="res://dialog_with_button.tscn"
+run/main_scene="res://scenes/timer_ex.tscn"
 boot_splash/fullsize=false
 boot_splash/use_filter=false
 boot_splash/bg_color=Color( 0.12549, 0.145098, 0.192157, 1 )
