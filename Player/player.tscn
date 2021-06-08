@@ -20,7 +20,8 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 24.357
+radius = 27.7614
+height = 13.3084
 
 [node name="Player" type="Area2D"]
 position = Vector2( -0.629341, -0.349636 )
