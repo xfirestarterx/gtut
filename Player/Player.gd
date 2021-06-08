@@ -6,13 +6,19 @@ export var speed := 400
 var screen_size: Vector2
 
 
+func start(pos: Vector2) -> void:
+	position = pos
+	show()
+	$CollisionShape2D.disabled = false
+
+
 func _ready() -> void:
 	screen_size = get_viewport_rect().size
 	hide()
 
 
 func _process(delta: float) -> void:
-	var velocity = process_velocity()
+	var velocity := process_velocity()
 	process_pos(velocity, delta)
 	process_anim(velocity)
 
@@ -52,3 +58,8 @@ func process_anim(velocity: Vector2) -> void:
 		$AnimatedSprite.animation = "up"
 		$AnimatedSprite.flip_v = velocity.y > 0
 
+
+func _on_Player_body_entered(body: Node) -> void:
+	emit_signal("hit")
+	hide()
+	$CollisionShape2D.set_deferred('disabled', true)
